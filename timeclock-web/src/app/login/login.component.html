@@ -1,0 +1,20 @@
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Login</h5>
+    <form>
+      <div class="form-group">
+        <label for="inputEmail">Email address</label>
+        <input type="email" id="inputEmail" name="inputEmail" class="form-control" [(ngModel)]="username" placeholder="Enter email">
+      </div>
+      <div class="form-group">
+        <label for="inputPassword">Password</label>
+        <input type="password" id="inputPassword" name="inputPassword" class="form-control" [(ngModel)]="password" placeholder="Password">
+      </div>
+      <button type="submit" class="btn btn-primary" (click)=login()>Submit</button>
+    </form>
+  </div>
+</div>
+
+<div class="mt-2" *ngIf="message">
+  <ngb-alert [type]="'danger'" (closed)="message = null">{{ message }}</ngb-alert>
+</div>

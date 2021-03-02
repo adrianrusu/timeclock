@@ -1,0 +1,16 @@
+<select class="form-control" id="selectUser" [(ngModel)]="selectedUser" (ngModelChange)="onSelect($event)">
+  <option [ngValue]="null">All</option>
+  <option *ngFor="let user of users" [ngValue]="user.id" >{{ user.username }}</option>
+</select>
+
+<div class="mt-5" *ngIf="userLogs && userLogs.length > 0">
+  <h3>Results</h3>
+
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let log of userLogs">{{ log.user.username }} has {{ log.state }} on {{ log.creationDate }}</li>
+  </ul>
+</div>
+<div class="mt-5"  *ngIf="!userLogs || userLogs.length == 0">
+  <p class="text-center">There are no logs for the selected user.</p>
+</div>
+

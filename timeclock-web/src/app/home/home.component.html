@@ -1,0 +1,7 @@
+<div class="mt-5 d-flex flex-column text-center">
+    <h2>Welcome {{ user.firstName + ' ' + user.lastName }}</h2>
+    <p class="lead">Your state last changed at: {{ currentState?.creationDate ? currentState.creationDate : 'never' }}</p>
+    <p class="mt-5">
+        <a class="btn btn-lg btn-success" (click)="toggleState()">{{ getButtonText() }}</a>
+    </p>
+</div>
